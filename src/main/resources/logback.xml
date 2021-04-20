@@ -1,0 +1,29 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<configuration>
+    <appender name = "STDOUT" class = "ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd'T'HH:mm:ss.sss} %p %c{1.} [%t] %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name = "FILE" class = "ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${logs_dir:-.}/logs/log.log</File>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd'T'HH:mm:ss.sss} %p %c{1.} [%t] %m%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${logs_dir:-.}/logs/log.log.%d{yyyy-MM-dd}.%i</fileNamePattern>
+            <!-- each archived file, size max 10MB -->
+            <maxFileSize>30MB</maxFileSize>
+            <!-- total size of all archive files, if total size > 20GB, it will delete old archived file -->
+            <totalSizeCap>20GB</totalSizeCap>
+            <!-- 60 days to keep -->
+            <maxHistory>60</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <root level = "INFO">
+        <appender-ref ref = "FILE"/>
+        <appender-ref ref = "STDOUT"/>
+    </root>
+</configuration>
