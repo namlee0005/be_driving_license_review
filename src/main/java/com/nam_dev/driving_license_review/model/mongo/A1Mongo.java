@@ -15,7 +15,7 @@ public class A1Mongo {
     private String id;
     private String question;
     private String explain;
-    private String correctAnswer;
+    private Integer correctAnswer;
     private String answer1;
     private String answer2;
     private String answer3;
