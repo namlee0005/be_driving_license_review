@@ -68,8 +68,8 @@ public class ImageService {
         }
         String folder = "";
         switch (token) {
-            case "SYSTEM_IMAGE_IBG":
-                folder = "ibg";
+            case "SYSTEM_IMAGE_DLR":
+                folder = "dlr";
                 break;
             case "SYSTEM_IMAGE_OTHER":
                 folder = "other";
