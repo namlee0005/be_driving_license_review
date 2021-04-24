@@ -22,4 +22,5 @@ public class A1Mongo {
     private String answer4;
     private Integer type;
     private String urlImage;
+    private Integer isSentenceParalysis;
 }
