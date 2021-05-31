@@ -9,6 +9,4 @@ import java.util.List;
 
 @Repository
 public interface ImageRepository extends MongoRepository<ImageMongo, String> {
-    @Query("{time: {$lt: ?0}, status: false}")
-    List<ImageMongo> findAllWithOverTime(Long time);
 }
